@@ -13,11 +13,21 @@
         b: $('input[name="b"]').val()
       }, function(data) {
         $('#test').text(data.result);
+        setTimeout(function () {
+            var j = jQuery.parseJSON(data.result);
+            Materialize.toast('You said: ' + j.data.text, 3000);
+            var key_word = j.data.semantic[0].slots;
+            for (word in key_word){
+                Materialize.toast('Key word: ' + key_word[word].normValue, 3000);
+            }
+
+        }, 4000);
       });
       return false;
     };
 
-    $('#transform').bind('click', submit_form);
+    $('#voice').bind('click', submit_form);
+    $('#ml_result').hide();
 
   });
 </script>
@@ -43,6 +53,17 @@
         <br><br>
         <div class="row center">
           <p id = 'img_result'>   </p>
+
+          <div class="row" id="ml_result">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img id="ml_result_img" src="#">
+              <span class="card-title black-text" id="img_name" >Best match</span>
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
 
         <br><br>
@@ -58,7 +79,7 @@
     <div class="up-img-cover col s4">
 
         <a href="javascript:;" id = "voice" class="mdui-ripple mdui-bottom-nav-active"
-           onclick="Materialize.toast('Recognizing...', 7000,'',function(){window.location.href='list'})">
+           onclick="Materialize.toast('Recognizing...', 6000,'',function(){window.location.href='list'})">
       <i class="mdui-icon material-icons">&#xe31d;</i>
             <label>Voice</label>
     </a>

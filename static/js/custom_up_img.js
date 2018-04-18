@@ -83,7 +83,12 @@ $(function() {
                 	$modal_alert.modal();
                     $("#up-modal-frame").modal('close');
                     console.log(data)
-                    $('#img_result').text(eval('(' + data + ')')['results'])
+                    var img_url = eval('(' + data + ')')['results'][0].url
+                    // $('#img_result').text(eval('(' + data + ')')['results'][0].url)
+                    $("#ml_result").show();
+                    $("#ml_result_img").attr("src", img_url);
+                    $('#img_name').text('Best match: [ ' + img_url.split('_')[0].split('/').pop() + ' ]')
+                    Materialize.toast('Best match: [ ' + img_url.split('_')[0].split('/').pop() + ' ]', 2000,'',function(){{window.location.href='list'}})
                 },
                 error: function(){
                 	$modal_loading.modal('close');
