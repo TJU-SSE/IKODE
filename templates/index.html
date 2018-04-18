@@ -2,6 +2,8 @@
 
 {% block body %}
 
+<link rel="stylesheet" href="http://cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+
 
 <script type="text/javascript">
   $(function() {
@@ -20,11 +22,67 @@
   });
 </script>
 
+<div class="mdui-bottom-nav-fixed">
+  <nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">COIKEA</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
 
-{% include "voice.html"%}
-{% include "upload.html"%}
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <div class="row center">
+          <p id = 'img_result'>   </p>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="https://images.ifanr.cn/wp-content/uploads/2018/01/giphy-downsized.gif" alt="Unsplashed background img 1"></div>
+  </div>
+
+  {% include "upload_frame.html"%}
+
+  <div class="mdui-bottom-nav mdui-color-white">
+    <div class="up-img-cover col s4">
+        <a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+      <i class="mdui-icon material-icons">&#xe31d;</i>
+      <label>Voice</label>
+    </a>
+    </div>
+
+    {% include "upload.html"%}
+
+    <div class="up-img-cover col s4">
+      <a href="javascript:;" class="mdui-ripple">
+      <i class="mdui-icon material-icons">&#xe3c9;</i>
+      <label>Text</label>
+      </a>
+    </div>
+
+  </div>
 
 
+
+</div>
+
+
+{#{% include "voice.html"%}#}
+
+
+  <script src="http://cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+  <script src="js/init.js"></script>
 
 
 {% endblock %}
