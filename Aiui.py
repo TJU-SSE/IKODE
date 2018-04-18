@@ -109,5 +109,13 @@ def add_numbers():
 def index():
     return render_template('index.html')
 
+@app.route('/group')
+def group():
+    return render_template('group.html')
+
+@app.route('/list')
+def list():
+    return render_template('list.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
