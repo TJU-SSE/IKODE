@@ -54,11 +54,13 @@
 
   {% include "upload_frame.html"%}
 
-  <div class="mdui-bottom-nav mdui-color-white">
+  <div class="mdui-bottom-nav  mdui-color-white">
     <div class="up-img-cover col s4">
-        <a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+
+        <a href="javascript:;" id = "voice" class="mdui-ripple mdui-bottom-nav-active"
+           onclick="Materialize.toast('Recognizing...', 4000,'',function(){window.location.href='list'})">
       <i class="mdui-icon material-icons">&#xe31d;</i>
-      <label>Voice</label>
+            <label>Voice</label>
     </a>
     </div>
 
@@ -73,10 +75,15 @@
 
   </div>
 
-
-
 </div>
+  <script type="text/javascript">
+  $("#voice").click(function(){
+    audio = new Audio("test.wav");
+    audio.play();
+  });
 
+
+  </script>
 
 {#{% include "voice.html"%}#}
 
