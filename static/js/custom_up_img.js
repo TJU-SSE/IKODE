@@ -88,7 +88,7 @@ $(function() {
                     $("#ml_result").show();
                     $("#ml_result_img").attr("src", img_url);
                     $('#img_name').text('Best match: [ ' + img_url.split('_')[0].split('/').pop() + ' ]')
-                    Materialize.toast('Best match: [ ' + img_url.split('_')[0].split('/').pop() + ' ]', 2000,'',function(){{window.location.href='list'}})
+                    Materialize.toast('Best match: [ ' + img_url.split('_')[0].split('/').pop() + ' ]', 3000,'',function(){{window.location.href='list'}})
                 },
                 error: function(){
                 	$modal_loading.modal('close');
